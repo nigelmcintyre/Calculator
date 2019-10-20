@@ -1,0 +1,59 @@
+#container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  border: solid 2px;
+  width: 60vh;
+  height: 60vh;
+  border-radius: 10px;
+}
+#topContainer {
+  display: inline-grid;
+  grid-template-columns: 21% 68%;
+  grid-template-rows: 85%;
+  background-color: lightgrey;
+  grid-gap: 4%;
+  padding-left: 4%;
+  padding-top: 3%;
+  width: 100%;
+  height: 20%;
+}
+#numberArea {
+  display: grid;
+  background-color: lightgrey;
+  grid-template-columns: 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20%;
+  grid-gap: 4%;
+
+  padding-top: 1%;
+  padding-left: 5%;
+
+  height: 80%;
+}
+
+.input {
+  border: 1px solid;
+  font-size: 30px;
+  text-align: center;
+}
+
+#clear {
+  margin-left: 5px;
+}
+
+#output {
+  border: solid 2px;
+  padding-left: 5px;
+  padding-right: 10px;
+  font-size: 18px;
+  background-color: white;
+  overflow-wrap: break-word;
+  text-align: right;
+  border-radius: 10px;
+}
+
+.button {
+  background-color: rgb(41, 41, 61);
+  border-radius: 10px;
+  color: white;
+}
