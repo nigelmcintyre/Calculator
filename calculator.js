@@ -31,6 +31,7 @@ let clear = () => {
   answer = 0;
   decimalX = 0;
   decimalY = 0;
+  equalClicked = false;
 };
 
 // prints result to screen
@@ -47,12 +48,13 @@ let takeInput = (value, output) => {
   if (value.length < 6) {
     if (value === 'C') {
       clear();
-      //cleears screen
+      //clears screen
       output.innerHTML = '';
     } else if (
       (!isNaN(value) || value === '.') &&
       operation.length === 0 &&
-      value != ''
+      value != '' &&
+      equalClicked != true
     ) {
       inputX.push(value);
       if (value === '.') decimalX++;
@@ -66,14 +68,16 @@ let takeInput = (value, output) => {
       value != '.' &&
       value != '=' &&
       !operation.length > 0 &&
-      inputX.length != 0
+      inputX.length != 0 &&
+      equalClicked != true
     ) {
       operation.push(value);
       printResults(output, inputX, operation, inputY, result);
     } else if (
       operation.length > 0 &&
       (!isNaN(value) || value === '.') &&
-      value != ''
+      value != '' &&
+      equalClicked != true
     ) {
       inputY.push(value);
       if (value === '.') decimalY++;
@@ -110,11 +114,10 @@ let inputX = [],
   operation = [],
   decimalX = 0,
   decimalY = 0;
-
+let equalClicked = false;
 let calculator = () => {
   let output = document.getElementById('output');
 
-  let result = 0;
   // digit and operators clicked
   document.addEventListener('click', event => {
     let value = event.target.textContent;
@@ -124,7 +127,7 @@ let calculator = () => {
   document.addEventListener('keydown', event => {
     let value = event.key;
     if (
-      (!value.shiftKey && !isNaN(value)) ||
+      (!value.shiftKey && !isNaN(value) && equalClicked != true) ||
       value === '+' ||
       value === '-' ||
       value === '*' ||
@@ -140,13 +143,14 @@ let calculator = () => {
   // equal key pressed
   document.addEventListener('keydown', event => {
     if (event.key === '=') {
-      console.log(event.key);
       calculate();
+      equalClicked = true;
     }
   });
   // equals clicked
   document.getElementById('equals').addEventListener('click', () => {
     calculate();
+    equalClicked = true;
   });
 };
 
