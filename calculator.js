@@ -1,35 +1,26 @@
-let answer;
-// round to three decimal places if result not whole
-let checkWhole = answer => {
-  if (answer % 1 === 0) {
-    return answer;
-  } else {
-    return answer.toFixed(3);
-  }
-};
-
 let multiply = (x, y) => {
   answer = x * y;
-  return checkWhole(answer);
+  return answer;
 };
 
 let divide = (x, y) => {
   answer = x / y;
-  return checkWhole(answer);
+  return answer;
 };
 
 let add = (x, y) => {
   answer = parseFloat(x) + parseFloat(y);
-  return checkWhole(answer);
+  return answer;
 };
 
 let subtract = (x, y) => {
   answer = x - y;
-  return checkWhole(answer);
+  return answer;
 };
 
 let res = 0;
 let result = 0;
+let answer;
 //inputs
 let clear = () => {
   inputX = [];
