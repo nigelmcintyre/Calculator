@@ -4,33 +4,45 @@
   margin-top: 5%;
   border: solid 2px;
   width: 60vh;
-  height: 60vh;
+  height: 55vh;
   border-radius: 10px;
+  background-color: lightgrey;
 }
 #topContainer {
   display: inline-grid;
-  grid-template-columns: 21% 68%;
-  grid-template-rows: 85%;
-  background-color: lightgrey;
-  grid-gap: 4%;
+  grid-template-columns: 22% 69%;
+  grid-template-rows: 83%;
+  grid-gap: 3.5%;
   padding-left: 4%;
   padding-top: 3%;
-  width: 100%;
+  width: 96%;
   height: 20%;
 }
+
 #numberArea {
   display: grid;
-  background-color: lightgrey;
-  grid-template-columns: 20% 20% 20% 20%;
-  grid-template-rows: 20% 20% 20% 20%;
-  grid-gap: 4%;
+  grid-template-columns: 21% 21% 21% 21%;
+  grid-template-rows: 16% 16% 16% 16% 16%;
+
+  grid-gap: 3.5%;
 
   padding-top: 1%;
   padding-left: 5%;
 
-  height: 80%;
+  height: 75%;
+  border-radius: 10px;
 }
 
+#equals {
+  grid-column: span 4 / 5;
+  grid-row: 5;
+  font-size: 30px;
+}
+
+#zero {
+  grid-column: span 2/3;
+  grid-row: 4;
+}
 .input {
   border: 1px solid;
   font-size: 30px;
@@ -39,6 +51,14 @@
 
 #clear {
   margin-left: 5px;
+  font-size: 25px;
+}
+
+.button {
+  background-color: rgb(41, 41, 61);
+  border-radius: 10px;
+  font-size: 20px;
+  color: white;
 }
 
 #output {
@@ -50,10 +70,4 @@
   overflow-wrap: break-word;
   text-align: right;
   border-radius: 10px;
-}
-
-.button {
-  background-color: rgb(41, 41, 61);
-  border-radius: 10px;
-  color: white;
 }
